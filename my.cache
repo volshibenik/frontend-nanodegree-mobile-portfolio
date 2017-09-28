@@ -5,4 +5,5 @@ CACHE:
 print.css 
 /css/print.css
 css/print.css
+./css/print.css
 img/8x4squares-min.jpg

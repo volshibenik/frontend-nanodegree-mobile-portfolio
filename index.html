@@ -62,14 +62,23 @@
 				body { font-size: 12px;}
 				header p { padding-left: 4.5em;}
 			}
+			@media print {
+				* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+				a, a:visited { color: #444 !important; text-decoration: underline; }
+				a[href]:after { content: " (" attr(href) ")"; }
+				tr, img { page-break-inside: avoid; }
+				img { max-width: 100% !important; }
+				@page { margin: 0.5cm; }
+				p, h2, h3 { orphans: 3; widows: 3; }
+				h2, h3{ page-break-after: avoid; }
+			}
+
 
 		</style>
-
-		<link href="css/print.css" rel="stylesheet" media="print">
 	</head>
 	<body>
 		<header>
-			<a href="/"><img src="https://i.imgur.com/FsqReFz.jpg"></a>
+			<a href="/"><img src="https://i.imgur.com/JoPDLLz.jpg"></a>
 			<p>Cameron Pittman<br><span>Course Developer</span></p>
 
 		</header>
@@ -79,7 +88,7 @@
 				<strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
 			</div>
 			<header class="right">
-				<a href="/"><img src="https://i.imgur.com/MvBJ59E.jpg"></a>
+				<a href="/"><img src="https://i.imgur.com/bFbcbEP.jpg"></a>
 				<p>Sergey Saevich<br><span>Course Listener</span></p>
 			</header>
 			<div class="hero">
@@ -110,7 +119,7 @@
 					</li>
 
 					<li>
-						<img src="views/images/pizzeria-res-comp.jpg">
+						<img src="https://i.imgur.com/rsKkWCe.jpg">
 						<a href="views/pizza.html">Cam's Pizzeria</a>
 						<p>Who wants a performant pizza?</p>
 					</li>
@@ -141,19 +150,8 @@
 			})(document);
 		</script>
 		<script>
-			if ('serviceWorker' in navigator) {
-				window.addEventListener('load', function() {
-					navigator.serviceWorker.register('sw2.js').then(function(registration) {
-						// Registration was successful
-						console.log('ServiceWorker registration successful with scope: ', registration.scope);
-					}, function(err) {
-						// registration failed :(
-						console.log('ServiceWorker registration failed: ', err);
-					});
-				});
-			}
+			function logCRP(){var t=window.performance.timing,dcl=t.domContentLoadedEventStart-t.domLoading,complete=t.domComplete-t.domLoading;var stats=document.getElementById("crp-stats");stats.textContent='DCL: '+dcl+'ms, onload: '+complete+'ms';}window.addEventListener("load",function(event){logCRP();});
 		</script>
 		<script async src="https://www.google-analytics.com/analytics.js" ></script>
-		<script async src="js/perfmatters.js"></script>
 	</body>
 </html>

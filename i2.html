@@ -130,8 +130,14 @@
 
 		<script async src="https://www.google-analytics.com/analytics.js" ></script>
     <script async src="js/perfmatters.js"></script>
-   
-    
+    <script>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+                     w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      // Optional TODO: replace with your Google Analytics profile ID.
+      ga('create', 'UA-XXXX-Y');
+      ga('send', 'pageview');
+    </script>
 		<script>
 			WebFontConfig = {
 				google: {
@@ -148,5 +154,19 @@
 			})(document);
 		</script>
     
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw2.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+
   </body>
 </html>

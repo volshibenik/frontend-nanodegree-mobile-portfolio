@@ -17,7 +17,7 @@
 				'js/perfmatters.js',
 				'img/me-comp-res.jpg',
 				'css/print.css',
-				'project-2048.html'
+				'index.html'
 			]);
 		});
 	};
@@ -50,7 +50,7 @@
 			event.respondWith(
 				fetch(request)
 				.catch(function () {
-					return caches.match('project-2048.html');
+					return caches.match('index.html');
 				})
 			);
 			return;
@@ -82,7 +82,7 @@
 				.catch(function () {
 					return caches.match(request)
 						.then(function (response) {
-						return response || caches.match('project-2048.html');
+						return response || caches.match('index.html');
 					})
 				})
 			);

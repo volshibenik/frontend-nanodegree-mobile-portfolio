@@ -9,10 +9,6 @@
     
     <title>Cameron Pittman: Portfolio</title>
     <style>
-      /*added fonts locally,think it's important fo UX, lost 1 performance point*/
-      @font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;src:srl(fonts/OpenSans-Bold.ttf) format("truetype");}
-      @font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;src:srl(fonts/OpenSans-Regular.ttf) format("truetype");}
-
       .right {
         text-align: right;
       }
@@ -141,6 +137,22 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
+		<script>
+			WebFontConfig = {
+				google: {
+					families: ['Open Sans']
+				},
+				timeout: 2000 // Set the timeout to two seconds
+			};
+
+			(function(d) {
+				var wf = d.createElement('script'), s = d.scripts[0];
+				wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+				wf.async = true;
+				s.parentNode.insertBefore(wf, s);
+			})(document);
+		</script>
+    
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
